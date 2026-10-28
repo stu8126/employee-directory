@@ -18,10 +18,9 @@ export function getEmployees() {
 }
 
 export function getEmployee(id) {
-  return employees.find((e) => e.id === id);
+  return employees.find((employee) => employee.id === id);
 }
 
 export function getRandomEmployee() {
-  const randomIndex = Math.floor(Math.random() * employees.length);
-  return employees[randomIndex];
+  return employees[Math.floor(Math.random() * employees.length)];
 }

@@ -9,22 +9,22 @@ app.get("/", (req, res) => {
 });
 
 app.get("/employees", (req, res) => {
-  const employees = getEmployees();
-  res.send(employees);
+  const data = getEmployees();
+  res.send(data);
 });
 
 app.get("/employees/random", (req, res) => {
-  const employee = getRandomEmployee();
-  res.send(employee);
+  const data = getRandomEmployee();
+  res.send(data);
 });
 
 app.get("/employees/:id", (req, res) => {
   const { id } = req.params;
-  const employee = getEmployee(+id);
+  const data = getEmployee(+id);
 
-  if (!employee) {
-    return res.status(404).send(`Employee #${id} not found.`);
+  if (!data) {
+    return res.status(404).send("Employee not found.");
   }
 
-  res.send(employee);
+  res.send(data);
 });
